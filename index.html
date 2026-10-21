@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degan Jelly - Segar Kelapanya, Kenyal Jelly-nya!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tropical: {
+                            dark: '#1b4332',
+                            primary: '#2d6a4f',
+                            medium: '#40916c',
+                            light: '#52b788',
+                            soft: '#74c69d',
+                            accent: '#f4a261',
+                            gold: '#e9c46a',
+                            bg: '#fdfbf7',
+                            cardBg: '#f4f9f4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Fredoka', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fdfbf7;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2d3748;
+            scroll-behavior: smooth;
+        }
+        .font-display {
+            font-family: 'Fredoka', cursive;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(82, 183, 136, 0.2);
+        }
+        .blob-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(116, 198, 157, 0.15) 0%, rgba(253, 251, 247, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-tropical-bg antialiased selection:bg-tropical-light selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-tropical-primary flex items-center justify-center text-white text-2xl shadow-md">
+                        <i class="fa-solid fa-cookie-bite"></i>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl sm:text-3xl text-tropical-dark tracking-wide block leading-none">Degan Jelly</span>
+                        <span class="text-xs font-semibold text-tropical-accent tracking-wider uppercase">Camilan Tropis</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+                    <a href="#about" class="hover:text-tropical-primary transition">Tentang</a>
+                    <a href="#benefits" class="hover:text-tropical-primary transition">Kelebihan & Manfaat</a>
+                    <a href="#variants" class="hover:text-tropical-primary transition">Varian Rasa</a>
+                    <a href="#order" class="hover:text-tropical-primary transition">Kalkulator Pesanan</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <a href="#order" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full font-bold text-white bg-tropical-primary hover:bg-tropical-dark shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-cart-shopping mr-2"></i> Pesan Sekarang
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-tropical-primary">Tentang</a>
+            <a href="#benefits" class="block py-2 text-gray-600 hover:text-tropical-primary">Kelebihan & Manfaat</a>
+            <a href="#variants" class="block py-2 text-gray-600 hover:text-tropical-primary">Varian Rasa</a>
+            <a href="#order" class="block py-2 text-gray-600 hover:text-tropical-primary">Kalkulator Pesanan</a>
+            <a href="#order" class="block w-full text-center py-2.5 rounded-xl font-bold text-white bg-tropical-primary">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden blob-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tropical-gold/20 text-tropical-dark font-semibold text-sm border border-tropical-gold/40 shadow-sm">
+                        <i class="fa-solid fa-heart text-red-500"></i>
+                        <span>Camilan Tropis Penuh Cerita ♡</span>
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-tropical-dark leading-tight">
+                        Segar Kelapanya,<br>
+                        <span class="text-tropical-accent">Kenyal Jelly-nya!</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Degan Jelly adalah camilan tropis yang menggabungkan kesegaran air kelapa muda, daging kelapa asli, dan jelly kenyal dalam satu kesatuan. Rasanya segar, ringan, dan bikin nagih!
+                    </p>
+
+                    <!-- Price Highlight & CTA -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <div class="bg-white px-6 py-3 rounded-2xl shadow-md border border-tropical-light/30 flex items-center gap-3">
+                            <div class="text-left">
+                                <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Mulai Dari</span>
+                                <span class="text-2xl font-extrabold text-tropical-primary">Rp 22.000 <span class="text-xs font-normal text-gray-500">/ cup</span></span>
+                            </div>
+                            <span class="text-xs bg-tropical-gold/30 text-tropical-dark px-2.5 py-1 rounded-md font-semibold">Varian Mix</span>
+                        </div>
+
+                        <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-tropical-accent hover:bg-yellow-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <span>Pesan Sekarang</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Micro Badge Indicators -->
+                    <div class="pt-6 grid grid-cols-3 gap-2 sm:gap-4 max-w-md mx-auto lg:mx-0 text-center">
+                        <div class="p-2 bg-white/60 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-leaf text-tropical-light text-xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-700">100% Alami</p>
+                        </div>
+                        <div class="p-2 bg-white/60 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-bolt text-amber-500 text-xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-700">Elektrolit Alami</p>
+                        </div>
+                        <div class="p-2 bg-white/60 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-smile-beam text-pink-500 text-xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-700">Semua Usia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Column -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Main Coconut Visual Mockup -->
+                        <div class="relative z-10 bg-gradient-to-tr from-tropical-light to-tropical-primary p-3 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500">
+                            <img src="https://placehold.co/600x600/2d6a4f/ffffff?text=Degan+Jelly+Mix" 
+                                 alt="Degan Jelly Mix Float" 
+                                 class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-inner"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=600&q=80';">
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-xs font-bold text-tropical-accent uppercase">Terfavorit ★</p>
+                                        <p class="font-bold text-tropical-dark">Degan Jelly Mix Buah</p>
+                                    </div>
+                                    <span class="text-tropical-primary font-extrabold text-lg">Rp 22k</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-4 -left-4 z-20 bg-white p-3 rounded-2xl shadow-xl border border-emerald-100 animate-bounce hidden sm:flex items-center gap-2">
+                            <span class="text-2xl">🍓</span>
+                            <div class="text-xs">
+                                <p class="font-bold text-gray-800">Topping Buah</p>
+                                <p class="text-gray-500">Segar & Asli</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -right-4 z-20 bg-tropical-dark text-white p-3 rounded-2xl shadow-xl hidden sm:flex items-center gap-2">
+                            <span class="text-2xl">🥥</span>
+                            <div class="text-xs">
+                                <p class="font-bold text-tropical-gold">Kelapa Muda</p>
+                                <p class="text-gray-300">Daging renyah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section (Kelebihan & Manfaat) -->
+    <section id="benefits" class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-tropical-primary font-extrabold text-sm uppercase tracking-widest">Kenapa Harus Coba?</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-tropical-dark mt-2">Segala Kebaikan Dalam Satu Cup</h2>
+                <div class="w-20 h-1.5 bg-tropical-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- Kelebihan Produk -->
+                <div class="bg-tropical-cardBg p-8 rounded-3xl border border-tropical-light/20 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-tropical-primary flex items-center justify-center text-white text-2xl shadow">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-tropical-dark">Kelebihan Produk</h3>
+                            <p class="text-sm text-gray-600">Alasan kamu bakal suka banget!</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3 bg-white p-3.5 rounded-xl shadow-sm border border-emerald-50">
+                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium"><strong>Bahan Alami & Berkualitas:</strong> Dibuat dari kelapa pilihan dan buah segar tanpa pengawet.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-white p-3.5 rounded-xl shadow-sm border border-emerald-50">
+                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium"><strong>Rasa Segar & Autentik:</strong> Paduan sempurna rasa manis alami air kelapa muda.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-white p-3.5 rounded-xl shadow-sm border border-emerald-50">
+                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium"><strong>Tekstur Jelly Kenyal:</strong> Sensasi kenyal lembut di setiap gigitan.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-white p-3.5 rounded-xl shadow-sm border border-emerald-50">
+                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium"><strong>Praktis & Mudah Dibawa:</strong> Kemasan higienis yang siap menemani aktivitasmu.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-white p-3.5 rounded-xl shadow-sm border border-emerald-50">
+                            <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium"><strong>Cocok Semua Kalangan:</strong> Dari anak-anak hingga dewasa pasti suka!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Manfaat Kesehatan -->
+                <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-200/50 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-tropical-accent flex items-center justify-center text-white text-2xl shadow">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-tropical-dark">Manfaat Kesehatan</h3>
+                            <p class="text-sm text-gray-600">Bukan sekadar nikmat, tapi juga menyehatkan</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-amber-100/80">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-droplet text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Menghidrasi Tubuh</h4>
+                            <p class="text-xs text-gray-500 mt-1">Mengembalikan cairan tubuh yang hilang secara cepat.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-amber-100/80">
+                            <div class="w-10 h-10 rounded-xl bg-green-50 text-green-500 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-arrows-rotate text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Melancarkan Pencernaan</h4>
+                            <p class="text-xs text-gray-500 mt-1">Kandungan serat jelly membantu kesehatan usus.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-amber-100/80">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-bolt text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Elektrolit Alami</h4>
+                            <p class="text-xs text-gray-500 mt-1">Sumber potassium dan mineral alami dari degan.</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-amber-100/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-leaf text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Rendah Kalori</h4>
+                            <p class="text-xs text-gray-500 mt-1">Camilan aman tanpa khawatir berat badan (tergantung varian).</p>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-amber-100/80 sm:col-span-2">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Baik untuk Daya Tahan Tubuh</h4>
+                                    <p class="text-xs text-gray-500">Kaya akan nutrisi alami untuk mendukung kesegaran harianmu.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Flavor Variants Section -->
+    <section id="variants" class="py-16 bg-tropical-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-tropical-primary font-extrabold text-sm uppercase tracking-widest">Pilihan Segar</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-tropical-dark mt-2">Varian Rasa Favorit</h2>
+                <p class="text-gray-600 mt-3">Pilih varian kesukaanmu dan nikmati kesegarannya!</p>
+            </div>
+
+            <!-- Variants Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Variant 1: Mix -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden rounded-2xl mb-4 bg-emerald-50 h-48">
+                            <span class="absolute top-3 left-3 bg-tropical-accent text-white text-xs font-bold px-3 py-1 rounded-full z-10">Best Seller</span>
+                            <img src="https://placehold.co/400x300/f4a261/ffffff?text=Varian+Mix" 
+                                 alt="Degan Jelly Mix" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=400&q=80';">
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-tropical-dark">Mix Buah</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Perpaduan segar jelly, daging kelapa, dan topping beragam buah-buahan pilihan (strawberry, melon, mangga).
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Harga</span>
+                            <span class="font-extrabold text-tropical-primary text-lg">Rp 22.000</span>
+                        </div>
+                        <button onclick="selectVariant('Mix', 22000)" class="px-4 py-2 bg-tropical-primary hover:bg-tropical-dark text-white rounded-xl text-sm font-semibold transition">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Variant 2: Original -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden rounded-2xl mb-4 bg-emerald-50 h-48">
+                            <span class="absolute top-3 left-3 bg-tropical-light text-white text-xs font-bold px-3 py-1 rounded-full z-10">Klasik</span>
+                            <img src="https://placehold.co/400x300/2d6a4f/ffffff?text=Varian+Original" 
+                                 alt="Degan Jelly Original" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=400&q=80';">
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-tropical-dark">Original (Ori)</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Degan asli dan jelly aja. Murni, simple, tapi tetap rasa juara yang tak tertandingi!
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Harga</span>
+                            <span class="font-extrabold text-tropical-primary text-lg">Rp 18.000</span>
+                        </div>
+                        <button onclick="selectVariant('Ori', 18000)" class="px-4 py-2 bg-tropical-primary hover:bg-tropical-dark text-white rounded-xl text-sm font-semibold transition">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Variant 3: Single Fruit Melon -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden rounded-2xl mb-4 bg-emerald-50 h-48">
+                            <span class="absolute top-3 left-3 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Segar</span>
+                            <img src="https://placehold.co/400x300/52b788/ffffff?text=Melon+Topping" 
+                                 alt="Degan Jelly Melon" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80';">
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-tropical-dark">Single Fruit (Melon)</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Topping 1 buah melon manis dan segar. Pas buat kamu pecinta aroma dan rasa melon!
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Harga</span>
+                            <span class="font-extrabold text-tropical-primary text-lg">Rp 20.000</span>
+                        </div>
+                        <button onclick="selectVariant('Single Fruit Melon', 20000)" class="px-4 py-2 bg-tropical-primary hover:bg-tropical-dark text-white rounded-xl text-sm font-semibold transition">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Variant 4: Single Fruit Strawberry -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-emerald-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden rounded-2xl mb-4 bg-emerald-50 h-48">
+                            <span class="absolute top-3 left-3 bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Favorit</span>
+                            <img src="https://placehold.co/400x300/e63946/ffffff?text=Strawberry+Topping" 
+                                 alt="Degan Jelly Strawberry" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=400&q=80';">
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-tropical-dark">Single Fruit (Strawberry)</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                            Topping potongan strawberry segar manis-asam yang memanjakan lidah.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Harga</span>
+                            <span class="font-extrabold text-tropical-primary text-lg">Rp 20.000</span>
+                        </div>
+                        <button onclick="selectVariant('Single Fruit Strawberry', 20000)" class="px-4 py-2 bg-tropical-primary hover:bg-tropical-dark text-white rounded-xl text-sm font-semibold transition">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Calculator & Direct Booking Section -->
+    <section id="order" class="py-16 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-tropical-cardBg to-white rounded-3xl p-6 sm:p-10 border border-tropical-light/30 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Text Side -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-tropical-accent font-bold text-sm uppercase tracking-wider">Hitung & Pesan</span>
+                        <h2 class="font-display text-3xl font-bold text-tropical-dark">Kalkulator Pesanan Ringkas</h2>
+                        <p class="text-gray-600 text-sm">
+                            Pilih varian rasa dan jumlah cup yang kamu inginkan. Pesanan akan langsung diteruskan ke WhatsApp admin kami.
+                        </p>
+
+                        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 space-y-2">
+                            <div class="flex items-center gap-2 text-tropical-dark font-bold text-sm">
+                                <i class="fa-solid fa-truck-fast text-tropical-primary"></i>
+                                <span>Pengiriman Cepat</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Dikemas dingin agar jelly dan buah tetap segar sampai di tanganmu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Form Side -->
+                    <div class="lg:col-span-7 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Pilih Varian Rasa</label>
+                            <select id="variantSelect" onchange="calculateTotal()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-tropical-primary font-medium">
+                                <option value="Mix" data-price="22000">Mix Buah - Rp 22.000</option>
+                                <option value="Ori" data-price="18000">Original (Ori) - Rp 18.000</option>
+                                <option value="Single Fruit Melon" data-price="20000">Single Fruit (Melon) - Rp 20.000</option>
+                                <option value="Single Fruit Strawberry" data-price="20000">Single Fruit (Strawberry) - Rp 20.000</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Jumlah Cup</label>
+                            <div class="flex items-center space-x-3">
+                                <button type="button" onclick="updateQty(-1)" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 font-bold text-gray-700 text-lg flex items-center justify-center">-</button>
+                                <input type="number" id="qtyInput" value="1" min="1" onchange="calculateTotal()" class="w-20 text-center font-bold text-lg bg-gray-50 border border-gray-200 rounded-xl py-2 text-gray-800">
+                                <button type="button" onclick="updateQty(1)" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 font-bold text-gray-700 text-lg flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Catatan Tambahan (Opsional)</label>
+                            <input type="text" id="noteInput" placeholder="Contoh: Kurangi es, sendok ekstra..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-tropical-primary">
+                        </div>
+
+                        <!-- Total Summary -->
+                        <div class="pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <div>
+                                <span class="text-xs text-gray-400 block font-semibold">Total Estimasi</span>
+                                <span id="totalPrice" class="font-display text-2xl font-bold text-tropical-primary">Rp 22.000</span>
+                            </div>
+                            <button onclick="sendOrderWhatsApp()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Pesan via WhatsApp</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Banner / Tagline Section -->
+    <footer class="bg-tropical-dark text-white pt-12 pb-8 border-t border-tropical-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center pb-12 border-b border-white/10">
+                <h3 class="font-display text-3xl sm:text-4xl text-tropical-gold mb-2">"Satu Cup, Banyak Kebahagiaan!" ✨</h3>
+                <p class="text-gray-300 text-sm max-w-xl mx-auto">Nikmati kesegaran tropis alami setiap hari bersama Degan Jelly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 items-center text-center md:text-left">
+                <!-- Brand Info -->
+                <div>
+                    <span class="font-display text-2xl text-white">Degan Jelly</span>
+                    <p class="text-xs text-gray-400 mt-1">Camilan Tropis Penuh Cerita ♡</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="flex justify-center space-x-6 text-sm text-gray-300">
+                    <a href="#about" class="hover:text-tropical-gold">Tentang</a>
+                    <a href="#benefits" class="hover:text-tropical-gold">Kelebihan</a>
+                    <a href="#variants" class="hover:text-tropical-gold">Varian</a>
+                    <a href="#order" class="hover:text-tropical-gold">Pesan</a>
+                </div>
+
+                <!-- Social Media -->
+                <div class="flex justify-center md:justify-end space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-tropical-accent flex items-center justify-center transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-tropical-accent flex items-center justify-center transition">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/6283843635966" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-tropical-accent flex items-center justify-center transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center text-xs text-gray-400 pt-4">
+                &copy; 2026 Degan Jelly. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Quantity handler
+        function updateQty(change) {
+            const qtyInput = document.getElementById('qtyInput');
+            let currentQty = parseInt(qtyInput.value) || 1;
+            currentQty += change;
+            if (currentQty < 1) currentQty = 1;
+            qtyInput.value = currentQty;
+            calculateTotal();
+        }
+
+        // Select variant from product cards
+        function selectVariant(variantName, price) {
+            const variantSelect = document.getElementById('variantSelect');
+            for (let i = 0; i < variantSelect.options.length; i++) {
+                if (variantSelect.options[i].value === variantName) {
+                    variantSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            calculateTotal();
+            // Scroll to calculator
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Calculate order price total
+        function calculateTotal() {
+            const variantSelect = document.getElementById('variantSelect');
+            const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+            const price = parseInt(selectedOption.getAttribute('data-price')) || 0;
+            const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+
+            const total = price * qty;
+            
+            // Format currency IDR
+            document.getElementById('totalPrice').innerText = 'Rp ' + total.toLocaleString('id-ID');
+        }
+
+        // Redirect order to WhatsApp
+        function sendOrderWhatsApp() {
+            const variantSelect = document.getElementById('variantSelect');
+            const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+            const variantName = selectedOption.value;
+            const price = parseInt(selectedOption.getAttribute('data-price'));
+            const qty = document.getElementById('qtyInput').value;
+            const note = document.getElementById('noteInput').value || '-';
+            const total = price * parseInt(qty);
+
+            const phoneNumber = "6283843635966"; // Nomor WhatsApp Admin terbaru
+            const message = `Halo Admin Degan Jelly! 🥥%0A%0ASaya mau pesan:%0A- *Varian*: Degan Jelly ${variantName}%0A- *Jumlah*: ${qty} cup%0A- *Total Harga*: Rp ${total.toLocaleString('id-ID')}%0A- *Catatan*: ${note}%0A%0AMohon diproses ya, terima kasih! ♡`;
+
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        // Initialize total on page load
+        window.onload = function() {
+            calculateTotal();
+        }
+    </script>
+</body>
+</html>
